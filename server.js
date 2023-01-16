@@ -26,4 +26,4 @@ db.once('open',()=>{
 
 app.use('/',indexRouter) // telling app to use the routes from indexRouter
 
-app.listen(process.env.PORT || 3000)
+app.listen(process.env.PORT || 3001)
