@@ -8,6 +8,7 @@ const expressLayouts = require('express-ejs-layouts')
 const bodyParser = require('body-parser')
 const indexRouter = require('./routes/index')
 const authorRouter = require('./routes/authors')
+const bookRouter = require('./routes/books')
 
 app.set('view engine','ejs') //setting the view engine here ejs
 app.set('views',__dirname,'/views')// telling the app where our views are gonna be coming from, here ../views
@@ -27,5 +28,5 @@ db.once('open',()=>{
 
 app.use('/',indexRouter) // telling app to use the routes from indexRouter
 app.use('/authors',authorRouter) //means our route looks like '/authors/'
-
+app.use('/books',bookRouter )
 app.listen(process.env.PORT || 3001)
